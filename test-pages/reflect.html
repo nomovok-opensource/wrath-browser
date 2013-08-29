@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>reflect</title>
+<style>
+div {
+    width: 200px;
+    height: 200px;
+    background: blue;
+    -webkit-box-reflect: below;
+}
+</style>
+</head>
+<body>
+<!--
+Top of the call stack for RenderReplica::paint:
+#0  0xb53a7f94 in WebCore::RenderReplica::paint () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#1  0xb530b8ec in WebCore::RenderLayer::paintLayer () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+--!>
+<div>blah</div>
+</body>
+</html>

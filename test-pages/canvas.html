@@ -1,0 +1,14 @@
+<html>
+<head>
+<title>canvas</title>
+</head>
+<body>
+<!--
+Top of the call stack for RenderCanvas::paintReplaced:
+#0  0xb53c3a9b in WebCore::RenderHTMLCanvas::paintReplaced () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#1  0xb5492603 in WebCore::RenderReplaced::paint () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#2  0xb520e800 in WebCore::InlineBox::paint () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+!-->
+<canvas id="canvas" width="250" height="250">canvas</canvas>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>columns</title>
+</head>
+<body>
+<!--
+Demonstrates multi column rendering. Should cause RenderBlock::paintColumnRules and RenderBlock::paintColumnContents to be called
+
+Top of the call stack for the paintColumnRules
+#0  0xb5292fde in WebCore::RenderBlock::paintColumnRules () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#1  0xb5293ecf in WebCore::RenderBlock::paintObject () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#2  0xb5292f0b in WebCore::RenderBlock::paint () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+
+Top of the call stack for the paintColumnContents:
+#0  0xb5293429 in WebCore::RenderBlock::paintColumnContents () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#1  0xb5293fc7 in WebCore::RenderBlock::paintObject () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#2  0xb5292f0b in WebCore::RenderBlock::paint () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+--!>
+
+<div style="width: 250px; height: 250px; margin-left: 100px; margin-top: 100px;">
+    <p style="-webkit-column-count: 3; -webkit-column-gap: 5px; -webkit-column-rule: 3px solid black;">
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean egestas blandit ipsum. Morbi nulla metus, luctus et, ullamcorper sit amet, commodo quis, nisl. Ut blandit lacus nec nibh. Phasellus eleifend enim et risus. Nam condimentum. Praesent euismod auctor dui.
+    </p>
+</div>
+
+</body>
+</html>

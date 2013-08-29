@@ -1,0 +1,15 @@
+<html>
+<head>
+<title>image</title>
+</head>
+<body>
+<!--
+Top of the call stack for RenderImage::paintIntoRect:
+#0  0xb53c8ba0 in WebCore::RenderImage::paintIntoRect () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#1  0xb53c7847 in WebCore::RenderImage::paintReplaced () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#2  0xb5492603 in WebCore::RenderReplaced::paint () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#3  0xb53c8692 in WebCore::RenderImage::paint () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+!-->
+<img src="border-image.png">
+</body>
+</html>

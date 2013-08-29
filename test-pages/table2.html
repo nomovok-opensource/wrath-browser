@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>Table</title>
+<style type="text/css">
+.table {
+    display: table;
+    table-layout: fixed;
+    width: 250px;
+}
+
+.row {
+    display: table-row;
+    opacity: 0.5;
+}
+
+.cell {
+    display: table-cell;
+}
+</style>
+</head>
+<body>
+<!--
+Top of the call stack for RenderTableRow::paint:
+#0  0xb53dcecc in WebCore::RenderTableRow::paint () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#1  0xb530b8ec in WebCore::RenderLayer::paintLayer () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#2  0xb530bf59 in WebCore::RenderLayer::paintList () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+--!>
+<div class="table">
+    <div class="row">
+        <div class="cell">1</div>
+        <div class="cell">2</div>
+    </div>
+    <div class="row">
+        <div class="cell">3</div>
+        <div class="cell">4</div>
+    </div>
+</div>
+</body>
+</html>

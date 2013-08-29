@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>form</title>
+</head>
+<body>
+<form>
+<!--
+A testcase for multiple webform related things.
+
+Bactrace for RenderFieldset::paintBoxDecorations
+#0  0xb53a1033 in WebCore::RenderFieldset::paintBoxDecorations () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#1  0xb5293ea0 in WebCore::RenderBlock::paintObject () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#2  0xb5292f0b in WebCore::RenderBlock::paint () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4    
+
+It might be a good idea to refine this to multiple smaller pages to avoid "noise" if used in debuging.
+--!>
+<fieldset>
+    <legend>Legend</legend>
+    <label for="onerowtext">Single line text input</label>
+    <input type="text" name="onerowtext">
+    <label for="multirowtext">Multi line text input</label>
+    <textarea name="multirowtext" rows="5" cols="5"></textarea>
+    <label for="button">Button</label>
+    <input type="button" name="button" value="button text">
+</fieldset>
+<fieldset>
+    <legend>Radio buttons</legend>
+    <input type="radio" name="rad" value="bar">Bar 
+    <input type="radio" name="rad" value="bar">Foo
+</fieldset>
+</form>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>imagebox</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<script src="imagebox.js"></script>
+<style type="text/css">
+#imagebox {
+    width: 600px;
+    height: 250px;
+    padding: 0;
+    overflow: hidden;
+    margin: 10px;
+}
+
+#inner-imagebox {
+    width: 600px;
+    height: 250px;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.imagebox-page {
+    width: 600px;
+    height: 250px;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+#controls {
+    border: solid thin black;
+    margin: 10px;
+    width: 600px;
+    text-align: center;
+}
+
+#frame {
+    border: solid thin black;
+    padding: 0;
+    float: left;
+    margin: 25px;
+}
+
+#prev-button { text-align: left; }
+#next-button { text-align: right; }
+
+.imagebox-page img {
+    margin: 0;
+    padding: 0;
+    border: none;
+    float: left;
+}
+
+.pagebox-page p {
+    height: 200px;
+    overflow: hidden;
+}
+</style>
+</head>
+<body>
+    <div id="frame">
+        <div id="imagebox">
+            <div id="inner-imagebox"></div>
+        </div>
+        <div id="controls">
+            <a href="#" id="prev-button">prev</a>
+            <a href="#" id="next-button">next</a>
+        </div>
+    </div>
+</body>
+</html>

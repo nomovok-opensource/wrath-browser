@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script type="text/javascript">
+function changeelem(elemname, infoname)
+{
+var e = document.getElementById(elemname);
+var info = document.getElementById(infoname);
+var curdis = e.style.display;
+
+if (!curdis) curdis = "block";
+
+if (curdis == "block")
+{
+e.style.display = "none";
+info.innerHTML = "Not visible";
+}
+else
+{
+e.style.display = "block";
+info.innerHTML = "Visible";
+}
+}
+</script>
+<style type="text/css">
+div
+{
+border: solid black 3px;
+padding: 1em 1ex;
+}
+#container
+{
+width: 30em;
+background-color: aqua;
+}
+#first
+{
+background-color: red;
+}
+#second
+{
+background-color: blue;
+}
+</style>
+<title>Dynamic display changes</title>
+</head>
+<body>
+<h1>Dynamic display changes</h1>
+
+<table>
+  <tr>
+    <td>
+      <input type="button" onclick="changeelem('container', 'containerinfo')" value="Container
+      block" />
+    </td>
+    <td>
+      <span id="containerinfo">Visible</span>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <input type="button" onclick="changeelem('first', 'firstinfo')" value="First block"
+      />
+    </td>
+    <td>
+      <span id="firstinfo">Visible</span>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <input type="button" onclick="changeelem('second', 'secondinfo')" value="Second
+      block" />
+    </td>
+    <td>
+      <span id="secondinfo">Visible</span>
+    </td>
+  </tr>
+</table>
+<div id="container">
+  <div id="first">
+    This is the first block.
+  </div>
+  <div id="second">
+    This is the second block.
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!-- Gazillion of dynamically created and deleted toggle buttons with animated colors and width -->
+<html>
+<head>
+<title>Togglable dynamically created and removed divs with animated colors</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<script type="text/javascript" src="toggles.js"></script>
+<style type="text/css">
+.toggle-button {
+  width: 80;
+  height: 80;
+  margin: 10;
+  background-color: green;
+  border-radius: 10px;
+  display: inline-block;
+  border: solid 3px black;
+}
+.control-link { margin: 30px; }
+</style>
+</head>
+<body>
+  <div id="controls">
+    <a href="#" class="control-link" id="add-links">Add few more boxes</a>
+    <a href="#" class="control-link" id="rm-links">Remove selected (red) boxes</a>
+    <a href="#" class="control-link" id="clear-links">Remove all boxes</a>
+  </div>
+  <div id="content">
+  </div>
+</body>
+</html>

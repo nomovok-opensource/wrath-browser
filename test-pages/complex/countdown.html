@@ -1,0 +1,36 @@
+<!-- Demonstrates animating font sizes -->
+<html>
+<head>
+<title>countdown</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<script src="countdown.js"></script>
+<style type="text/css">
+.counter {
+  display: inline-block;
+  width: 40px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+#content {
+  height: 100px;
+}
+
+#content p {
+  line-height: 60px;
+}
+
+#loader { display: none; }
+
+</style>
+</head>
+<body>
+  <div id="content">
+    <p>refresh in
+    <span class="counter">5</span>
+    seconds</p>
+  </div>
+  <p id="loader">Loading...</p>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>border test - rounded corners, inconsistent edge colors that have alpha</title>
+</head>
+<body>
+<!--
+This HTML causes the original RenderBoxModelObject::paintBorder() to call paintTranslucentBorderSides. Ultimately this reaches the drawBoxSideFromPath.
+Top of the callstack:
+#0  0xb5351c06 in WebCore::RenderBoxModelObject::drawBoxSideFromPath () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#1  0xb5350bd3 in WebCore::RenderBoxModelObject::paintOneBorderSide () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#2  0xb5350f3c in WebCore::RenderBoxModelObject::paintBorderSides () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#3  0xb53515a0 in WebCore::RenderBoxModelObject::paintTranslucentBorderSides () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#4  0xb5351b41 in WebCore::RenderBoxModelObject::paintBorder () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#5  0xb531af1f in WebCore::RenderBox::paintBoxDecorationsWithSize () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#6  0xb531a952 in WebCore::RenderBox::paintBoxDecorations () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+--!>
+
+<div style="border-style: solid; border-width: 10px; border-radius: 20px; border-color: red green blue rgba(0, 0, 0, 0.5) ; width: 20%; height: 200px; margin-left: 20%; margin-top: 65px;">
+</div>
+
+</body>
+</html>

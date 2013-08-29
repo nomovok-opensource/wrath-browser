@@ -1,0 +1,30 @@
+#!/usr/bin/make -f
+%:
+	dh $@ --parallel
+
+override_dh_auto_clean:
+	rm -fr webkit/WebKitBuild
+	rm -fr webkit/doxygen/WebCore.doxygen.files
+	rm -fr webkit/doxygen/WebCore.doxygen.defines
+	$(MAKE) -C wrath clean-all
+
+override_dh_auto_build:
+	$(MAKE) webkitrelease
+
+# add install debian/WRATHWebKit.desktop $$(pwd)/debian/wrath-browser/usr/share/applications/
+# to override_dh_auto_install for N9 homescreen icon
+override_dh_auto_install:
+	install wrath/release/libWRATH_Qt_Release.so.0.0.0 $$(pwd)/debian/wrath-browser/usr/lib
+	install webkit/WebKitBuild/Release/lib/libwrathwebkit.so.0.0.1 $$(pwd)/debian/wrath-browser/usr/lib
+	install webkit/WebKitBuild/Release/bin/QtTestBrowser $$(pwd)/debian/wrath-browser/usr/bin/wrath-browser
+	ln -s libWRATH_Qt_Release.so.0.0.0 $$(pwd)/debian/wrath-browser/usr/lib/libWRATH_Qt_Release.so.0
+	ln -s libwrathwebkit.so.0.0.1 $$(pwd)/debian/wrath-browser/usr/lib/libwrathwebkit.so.0
+
+# Not to be run
+override_dh_auto_test:
+
+VERSION=$(shell dpkg-parsechangelog | sed -n 's/^Version: \([^-]*\).*$$/\1/p')
+
+gen-source: clean
+	git archive --prefix "wrath-browser-$(VERSION)/" -o "../wrath-browser_$(VERSION).orig.tar.gz" master
+	git submodule foreach 'git archive --prefix "$$path/" -o "../../wrath-browser_$(VERSION).orig-$$path.tar.gz"' master

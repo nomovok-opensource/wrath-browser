@@ -1,0 +1,115 @@
+<html>
+<head>
+<title>sprites</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<script src="sprites.js"></script>
+<style type="text/css">
+body {
+  margin: 0;
+}
+
+#header {
+  height: 100px;
+  background-color: #cce;
+  border-bottom: solid 3px #333;
+  margin: 0;
+  padding-top: 34px;
+}
+
+#buttons {
+  height: 32px;
+  width: 256px;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#buttons a {
+  background-image: url(html-sprite-buttons.png);
+  width: 32;
+  height: 32;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+#buttons a.save {
+  background-position: 0px 0px;
+}
+
+#buttons a.save:hover {
+  background-position: 0px -32px;
+}
+
+#buttons a.open {
+  background-position: -32px 0px;
+}
+
+#buttons a.open:hover {
+  background-position: -32px -32px;
+}
+
+#buttons a.new {
+  background-position: -64px 0px;
+}
+
+#buttons a.new:hover {
+  background-position: -64px -32px;
+}
+
+#buttons a.openrecent {
+  background-position: -92px 0px;
+}
+
+#buttons a.openrecent:hover {
+  background-position: -92px -32px;
+}
+
+#buttons a.setup {
+  background-position: -128px 0px;
+}
+
+#buttons a.setup:hover {
+  background-position: -128px -32px;
+}
+
+#buttons a.undo {
+  background-position: -160px 0px;
+}
+
+#buttons a.undo:hover {
+  background-position: -160px -32px;
+}
+
+#buttons a.redo {
+  background-position: -192px 0px;
+}
+
+#buttons a.redo:hover {
+  background-position: -192px -32px;
+}
+
+#buttons a.configure {
+  background-position: -224px 0px;
+}
+
+#buttons a.configure:hover {
+  background-position: -224px -32px;
+}
+
+#content {
+  margin: 25px;
+}
+
+</style>
+</head>
+<body>
+  <div id="header">
+    <div id="buttons"></div>
+  </div>
+  <div id="content">
+    <img src="html-sprite-buttons.png" alt="The image used in this example">
+  </div>
+</body>
+</html>

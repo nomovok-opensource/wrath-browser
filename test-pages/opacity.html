@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script type="text/javascript">
+function toggle()
+{
+var opel = document.getElementById("main");
+var cur = opel.style.opacity;
+if (!cur || cur == "inherit") {
+  opel.style.opacity = 0.7;
+} else {
+  opel.style.opacity = "inherit";
+}
+}
+</script>
+<style type="text/css">
+#container
+{
+background-color: yellow;
+width: 400px;
+padding: 15px;
+border: solid black 1px;
+}
+#main
+{
+font-size: larger;
+background-color: blue;
+padding: 25px;
+}
+</style>
+<title>Dynamic opacity modifications</title>
+</head>
+<body>
+<h1>Dynamic opacity modifications</h1>
+
+<p>
+  <input type="button" onclick="toggle()" value="Toggle" />
+</p>
+
+<div id="container">
+  <div id="main">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis odio
+    turpis, viverra vitae lobortis ac, gravida sit amet libero. Etiam a
+    metus mi, et placerat orci. Quisque ut eros eget massa porta
+    convallis. Maecenas sit amet lobortis sapien. Phasellus vitae tellus
+    in risus feugiat tempus. Aenean adipiscing nibh nec est interdum
+    pretium. Ut tincidunt pulvinar massa, ut sollicitudin mi luctus
+    vel. Donec vehicula tincidunt nisl, sit amet tincidunt tellus molestie
+    in. Nam tempus viverra purus vitae pulvinar. Vivamus pretium interdum
+    venenatis. In bibendum velit non dui dictum quis molestie sapien gravida.
+  </div>
+</div>
+
+</body>
+</html>

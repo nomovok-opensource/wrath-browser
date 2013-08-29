@@ -1,0 +1,60 @@
+<html> 
+<head> 
+<title>Crazy divs</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<script src="crazy-divs.js"></script>
+<style type="text/css">
+div {
+  border: thin solid black; 
+  border-radius: 20px;
+  overflow: scroll;
+}
+
+div#root {
+  width: 600px;
+  height: 480px;
+  margin: 50px;
+  background-color: #40a;
+}
+
+div#sub {
+  width: 550px;
+  height: 400px;
+  position: relative;
+  top: 25px;
+  left: 20px;
+  background-color: #4aa;
+}
+
+div#subsub {
+  width: 500px;
+  height: 380px;
+  position: relative;
+  top: 10px;
+  left: 25px;
+  background-color: #a00;
+}
+
+div#subsubsub {
+  width: 450px;
+  height: 350px;
+  position: relative;
+  top: 15px;
+  left: 25px;
+  background-color: #a04;
+}
+
+</style>
+</head>
+<body>
+  <div id="root">
+    <div id="sub">
+      <div id="subsub">
+        <div id="subsubsub">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

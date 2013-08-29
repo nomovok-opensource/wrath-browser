@@ -1,0 +1,36 @@
+body
+{
+    background-color: black;
+    color: white;
+    margin-top: 18px;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font: 32px Candara, Calibri, Verdana, Tahoma, Arial;
+
+}
+
+#imgblock {
+    background: #070e15;
+    border: 1px solid #102030;
+    border-width: 2px;
+    -moz-border-radius: 15px 60px;
+    -webkit-border-top-left-radius: 15px 15px;
+    -webkit-border-top-right-radius: 60px 60px;
+    -webkit-border-bottom-left-radius: 60px 60px;
+    -webkit-border-bottom-right-radius: 15px 15px;
+    -opera-border-radius: 30px;
+    width: 640px;
+    text-align: center;
+}
+
+#mondayspin {
+    color: red;
+    font-size: 60pt;
+    -webkit-transition-property: -webkit-transform;
+    -webkit-transition-duration: 0.8s;
+    -webkit-transition-timing-function: linear;
+    -o-transition-property: -o-transform;
+    -o-transition-duration: 0.8s;
+    -o-transition-timing-function: linear;
+}

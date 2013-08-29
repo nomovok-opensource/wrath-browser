@@ -1,0 +1,6 @@
+[submodule "wrath"]
+	path = wrath
+	url = https://github.com/nomovok-opensource/wrath.git
+[submodule "webkit"]
+	path = webkit
+	url = https://github.com/nomovok-opensource/wrath-webkit.git

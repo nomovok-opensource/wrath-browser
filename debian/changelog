@@ -1,0 +1,13 @@
+wrath-browser (0.0.1-2) UNRELEASED; urgency=low
+
+  * Proper build-depends.
+  * Build webkit into soname libwrathwebkit.so.0 to
+    avoid conflicts with libqtwebkit4.
+
+ -- Petri Latvala <petri.latvala@nomovok.com>  Tue, 15 Jan 2013 10:08:43 +0200
+
+wrath-browser (0.0.1-1) unstable; urgency=low
+
+  * Initial release
+
+ -- Petri Latvala <petri.latvala@nomovok.com>  Tue, 15 Jan 2013 10:08:36 +0200

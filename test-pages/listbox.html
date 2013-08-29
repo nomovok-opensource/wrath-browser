@@ -1,0 +1,78 @@
+<html>
+<head>
+<title>ListBox and ListItem</title>
+<style type="text/css">
+select#foo {
+    background-color: #F88;
+}
+
+select#bar {
+    background-color: #8F8;
+}
+
+select#baz {
+    background-color: #88F;
+}
+
+select#yada {
+}
+
+.v1 { color: #aaa; }
+.v2 { color: #aa0; }
+.v3 { color: #a0a; }
+.v4 { color: #a00; }
+.v5 { color: #0aa; }
+.v6 { color: #0a0; }
+</style>
+</head>
+<body>
+<!--
+Top of the call stack for RenderListBox::paintItemForeground:
+#0  0xb544bcb5 in WebCore::RenderListBox::paintItemForeground () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#1  0xb544b697 in WebCore::RenderListBox::paintObject () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#2  0xb5292f0b in WebCore::RenderBlock::paint () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+
+Top of the call stack for RenderListBox::paintItemBackground:
+#0  0xb544c39f in WebCore::RenderListBox::paintItemBackground () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#1  0xb544b7db in WebCore::RenderListBox::paintObject () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#2  0xb5292f0b in WebCore::RenderBlock::paint () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+
+Top of the call stack for RenderListBox::paintScrollbar:
+#0  0xb544b9c4 in WebCore::RenderListBox::paintScrollbar () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#1  0xb544b7a4 in WebCore::RenderListBox::paintObject () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#2  0xb5292f0b in WebCore::RenderBlock::paint () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+--!>
+<form>
+    <select id="foo" name="foo" multiple>
+        <option class="v1" value="1">item 1</option>
+        <option class="v2" value="2">item 2</option>
+        <option class="v3" value="3">item 3</option>
+        <option class="v4" value="4">item 4</option>
+    </select>
+    <select id="bar" name="bar" multiple>
+        <option class="v1" value="1">item a</option>
+        <option class="v2" value="2">item b</option>
+        <option class="v3" value="3">item c</option>
+        <option class="v4" value="4">item d</option>
+        <option class="v5" value="5">item e</option>
+    </select>
+    <select id="baz" name="baz" multiple>
+        <option class="v1" value="1">item 1</option>
+        <option class="v2" value="2">item 2</option>
+        <option class="v3" value="3">item 3</option>
+        <option class="v4" value="4">item 4</option>
+        <option class="v5" value="5">item 4</option>
+        <option class="v6" value="6">item 4</option>
+    </select>
+    <select id="yada" name="yada" multiple>
+        <option class="v1" value="1">item 1</option>
+        <option class="v2" value="2">item 2</option>
+        <option class="v3" value="3">item 3</option>
+        <option class="v4" value="4">item 4</option>
+        <option class="v5" value="5">item 4</option>
+        <option class="v6" value="6">item 4</option>
+        <option class="v7" value="7">item 4</option>
+    </select>
+</form>
+</body>
+</html>

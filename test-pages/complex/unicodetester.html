@@ -1,0 +1,66 @@
+<html>
+<head>
+<title>unicode</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<script src="unicodetester.js"></script>
+<style type="text/css">
+body {
+  margin: 0;
+}
+
+#header {
+  height: 100px;
+  background-color: #cce;
+  border-bottom: solid 3px #333;
+  margin: 0;
+  padding-top: 34px;
+}
+
+#controls {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+}
+
+#content {
+    margin: 20px;
+}
+
+.textblock {
+    padding: 0;
+    margin: 10px;
+    border: thin solid black;
+}
+
+.textblock h1 {
+    margin: 0;
+    background-color: #cce;
+    text-indent: 1em;
+}
+
+.textblock p {
+    margin: 10px;
+}
+
+
+</style>
+</head>
+<body>
+  <div id="header">
+      <div id="controls">
+          <form>
+              <label for="start">Range start:</label>
+              <input name="start" type="text"></input>
+              <label for="end">Range end:</label>
+              <input name="end" type="text"></input>
+              <a href="#" id="addbutton">add range</a>
+          </form>
+      </div>
+  </div>
+  <div id="content">
+      <p>You can enter ranges using hex literals by prepending the number with "0x" (like 0xDEADBEEF)</p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=WRATHWebkit
+Exec=/usr/bin/wrath-browser

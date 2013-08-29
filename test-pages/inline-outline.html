@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>paintOutlineForLine test</title>
+<style type="text/css">
+p {
+    outline-style: solid;
+    outline-color: black;
+    outline-width: thin;
+    display: inline;
+}
+</style>
+</head>
+<body>
+<!--
+A tailored test for RenderInline::paintOutlineForLine:
+#0  0xb53edb90 in WebCore::RenderInline::paintOutlineForLine () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#1  0xb53edb34 in WebCore::RenderInline::paintOutline () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#2  0xb5433085 in WebCore::RenderLineBoxList::paint () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#3  0xb5285456 in WebCore::RenderBlock::paintContents () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+ --!>
+    <p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ornare, est at scelerisque bibendum, nisl nulla pretium nisl, nec consequat nisi augue at lacus. Vivamus aliquam mauris eget urna pulvinar consectetur. Sed sit amet lorem vel enim porta bibendum. Quisque suscipit ultricies ultricies. Morbi aliquam orci vel nulla pellentesque auctor. Cras dapibus ante ac ante consectetur ut blandit orci laoreet. Duis ac orci nec purus cursus iaculis. Fusce tempus dolor quis orci faucibus mollis placerat velit sagittis. Sed et leo enim. Pellentesque id diam et est euismod imperdiet nec ut nibh.
+    </p>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>Table</title>
+<style type="text/css">
+    th { background: gray; border: solid 2px black; }
+    td { border: solid 2px red; }
+    table { border: solid 1px blue; }
+</style>
+</head>
+<body>
+<!--
+A minimal table with tries to have all bells and whistles included.
+
+Top of the call stack for the RenderTableCell::paintBoxDecorations:
+#0  0xb54c235e in WebCore::RenderTableCell::paintBoxDecorations () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#1  0xb5293ea0 in WebCore::RenderBlock::paintObject () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#2  0xb5292f0b in WebCore::RenderBlock::paint () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#3  0xb54c0c91 in WebCore::RenderTableCell::paint () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#4  0xb54dc419 in WebCore::RenderTableSection::paintCell () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#5  0xb54dca4a in WebCore::RenderTableSection::paintObject () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#6  0xb54db4e0 in WebCore::RenderTableSection::paint () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#7  0xb54ae179 in WebCore::RenderTable::paintObject () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#8  0xb54adddb in WebCore::RenderTable::paint () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#9  0xb5293b39 in WebCore::RenderBlock::paintChildren () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+
+Top of the call stack for the RenderTableCell::paint:
+#0  0xb54c0b1b in WebCore::RenderTableCell::paint () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#1  0xb54dc419 in WebCore::RenderTableSection::paintCell () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#2  0xb54dca4a in WebCore::RenderTableSection::paintObject () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#3  0xb54db4e0 in WebCore::RenderTableSection::paint () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#4  0xb54ae179 in WebCore::RenderTable::paintObject () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#5  0xb54adddb in WebCore::RenderTable::paint () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#6  0xb5293b39 in WebCore::RenderBlock::paintChildren () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+
+TODO:
+Didn't get RenderTableRow::paint called...
+--!>
+<table>
+    <caption>table caption</caption>
+    <thead>
+        <tr><th>foo</th><th>bar</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>1</td><td>2</td></tr>
+        <tr><td>3</td><td>4</td></tr>
+    </tbody>
+    <tfoot>
+        <tr><th colspan="2">footer</th></tr>
+    </tfoot>
+</table>
+</body>
+</html>

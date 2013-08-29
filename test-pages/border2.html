@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>border test - rounded corners, consistent edge color</title>
+</head>
+<body>
+<!--
+This html is rendered in the original RenderBoxModelObject::paintBorder() by creating a shape out of inner and outer rectangles of the border.
+Look near the lines that spells like:
+graphicsContext->setFillRule(RULE_EVENODD);
+graphicsContext->setFillColor(edges[firstVisibleEdge].color, style->colorSpace());
+graphicsContext->fillPath(path);
+Top of the callstack:
+#0  0xb53515d6 in WebCore::RenderBoxModelObject::paintBorder () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#1  0xb531af1f in WebCore::RenderBox::paintBoxDecorationsWithSize () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#2  0xb531a952 in WebCore::RenderBox::paintBoxDecorations () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#3  0xb5293ea0 in WebCore::RenderBlock::paintObject () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+
+In RenderBoxModelObject::readyWRATHWidgetBorder this is handled near lines looking like:
+paintInfo.wrath_context->add_filled_shape(d->m_shapeWidget,
+    ContextOfWRATH::NodeSetter(),
+    WRATHWidgetGenerator::ColorProperties(c),
+    WRATHWidgetGenerator::shape_value(*(d->m_shape)));
+
+--!>
+
+<div style="border-style: solid; border-color: blue; border-width: 10px; border-radius: 20px; width: 20%; height: 200px; margin-left: 20%; margin-top: 65px;">
+</div>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!-- Typical html widget that expands and collapses to show and hide some content -->
+<!-- This also has an element that has rounded border and it clips it's child elements -->
+<html>
+<head>
+<title>Collapsable textbox</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<script type="text/javascript" src="textboxes.js"></script>
+<style type="text/css">
+.container {
+  margin: 10px;
+  border: solid thin black;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.controls {
+  background: #ddd;
+  padding: 0 10px;
+}
+
+.text-box {
+  margin: 10px 10px 10px 15px;
+  height: 0px;
+  overflow: auto;
+}
+
+.text-box p {
+  display: none;
+}
+
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="controls"><a href="#">show</a></div>
+      <div class="text-box">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vestibulum est non nisi pulvinar adipiscing. Suspendisse et purus sit amet purus blandit ullamcorper. Quisque sit amet enim tortor. Donec non pretium magna. Nunc et diam magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam vel commodo metus. Quisque ac accumsan libero.</p>
+        <p>Vivamus quis blandit tellus. Duis massa ante, tempus eu tristique ac, imperdiet eu arcu. In hac habitasse platea dictumst. Quisque mollis pharetra nulla, sit amet consectetur urna auctor in. Quisque iaculis, turpis vitae placerat feugiat, tellus enim tristique nibh, malesuada tincidunt libero dolor nec nulla. Etiam tellus velit, ultrices sed sollicitudin ut, ornare in ante. Aenean pharetra lobortis suscipit. Proin nunc dui, lobortis eget porta vitae, gravida ac risus. Mauris ut ligula elit. Mauris adipiscing tincidunt eros eget hendrerit.</p>
+        <p>Quisque luctus arcu tristique ante bibendum scelerisque. Mauris non nisl sem, in euismod nulla. Quisque condimentum, lorem vitae vehicula porta, diam tellus congue mauris, eu scelerisque neque lorem quis justo. Nullam est nisi, interdum nec lobortis vel, egestas sit amet ipsum. Sed malesuada, risus sed vestibulum convallis, sapien lectus varius nulla, at molestie metus odio nec elit. Vestibulum volutpat dolor eu velit dapibus a ultrices turpis tristique. Fusce faucibus elit vestibulum ligula tristique ultrices. Duis augue nunc, semper a ultricies lobortis, ultrices feugiat eros. Donec justo urna, dictum malesuada dignissim vehicula, interdum nec lectus.</p>
+        <p>Nullam mattis mattis erat, non tempus justo semper at. Quisque rhoncus diam nec nunc vestibulum non vehicula leo dapibus. Cras vel quam id ligula dictum tristique. Vivamus porta aliquam venenatis. Vestibulum commodo laoreet lorem, vitae volutpat nulla ullamcorper eget. Suspendisse et libero dolor, id hendrerit lacus. Donec mattis fermentum dui nec mattis. Duis aliquam scelerisque eros, quis tempus ipsum semper a. Aenean interdum ullamcorper diam sed pellentesque. Ut viverra, enim sed sodales porttitor, velit diam convallis augue, in ornare urna massa hendrerit felis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed lacinia risus eget libero venenatis at malesuada massa mollis. Morbi sed dolor mauris, et sollicitudin ante. Donec justo lorem, auctor eget tempor vitae, porttitor a mauris. Cras posuere mi vel lectus sagittis posuere.</p>
+        <p>Duis nec nisi nisl. Etiam imperdiet scelerisque nunc, eget sollicitudin diam vehicula vel. Vivamus diam dui, feugiat sed suscipit quis, commodo sit amet tellus. Donec et odio vel nisl elementum condimentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet arcu ut nisl suscipit mollis sed vitae ipsum. Etiam viverra, ligula et lobortis cursus, sem felis consequat orci, non egestas lorem augue quis purus. Mauris accumsan turpis vitae sapien pharetra vel dictum odio hendrerit. Donec viverra fringilla mauris, id sagittis orci rhoncus a. Integer elementum porta rhoncus. Mauris ac sagittis enim.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

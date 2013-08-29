@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script type="text/javascript">
+function jump()
+{
+var jumper = document.getElementById("jumper");
+var left = document.getElementById("left");
+var right = document.getElementById("right");
+
+var curpar = jumper.parentNode;
+if (curpar == left)
+{
+left.removeChild(jumper);
+right.appendChild(jumper);
+}
+else
+{
+right.removeChild(jumper);
+left.appendChild(jumper);
+}
+}
+</script>
+<style type="text/css">
+#left,#right
+{
+width: 20em;
+border: solid black 1px;
+}
+</style>
+<title>Dynamic DOM tree modifications</title>
+</head>
+<body>
+<h1>Dynamic DOM tree modifications</h1>
+
+<p>
+  <input type="button" onclick="jump()" value="Jump!" />
+</p>
+<table>
+  <tr>
+    <td id="left">
+      <span id="jumper">I'm here!</span>
+    </td>
+    <td id="right">
+      
+    </td>
+  </tr>
+</table>
+</body>
+</html>

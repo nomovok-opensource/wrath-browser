@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>border test - non-rounded corners, consistent edge colors</title>
+</head>
+<body>
+<!--
+This HTML causes the original RenderBoxModelObject::paintBorder() to call paintBorderSides without setting any additional clippings. Ultimately reaches the RenderObject::drawLineForBoxSide()
+Top of the callstack:
+#0  0xb547975e in WebCore::RenderObject::drawLineForBoxSide () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#1  0xb5350d46 in WebCore::RenderBoxModelObject::paintOneBorderSide () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#2  0xb5350f3c in WebCore::RenderBoxModelObject::paintBorderSides () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#3  0xb5351a75 in WebCore::RenderBoxModelObject::paintBorder () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#4  0xb531af1f in WebCore::RenderBox::paintBoxDecorationsWithSize () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+#5  0xb531a952 in WebCore::RenderBox::paintBoxDecorations () from /home/sami/devel/wrath/wrath-browser/webkit/WebKitBuild/Debug/bin/../lib/libQtWebKit.so.4
+
+In RenderBoxModelObject::readyWRATHWidgetBorder() this causes a call to readyWRATHWidgetBorderSides (again without any clipping).
+--!>
+
+<div style="border-style: solid; border-color: blue; border-width: 10px; width: 20%; height: 200px; margin-left: 20%; margin-top: 65px;">
+</div>
+
+</body>
+</html>

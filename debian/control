@@ -1,0 +1,12 @@
+Source: wrath-browser
+Maintainer: Petri Latvala <petri.latvala@nomovok.com>
+Section: web
+Priority: optional
+Standards-Version: 3.9.2
+Build-Depends: debhelper (>= 8), flex, bison, gperf, libqt4-dev, libqt4-opengl-dev, libfontconfig1-dev, libfreetype6-dev, libboost-dev, libsqlite3-dev, perl, python
+
+Package: wrath-browser
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: WRATHWebKit browser
+ WRATHWebkit example browser.
